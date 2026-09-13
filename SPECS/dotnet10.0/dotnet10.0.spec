@@ -96,20 +96,20 @@ Patch0:         runtime-disable-fortify-on-ilasm-parser.patch
 
 ExclusiveArch:  riscv64 x86_64
 
-BuildRequires:  aspnetcore-runtime-%{dotnet_major}-bin
-BuildRequires:  aspnetcore-targeting-pack-%{dotnet_major}-bin
+BuildRequires:  aspnetcore-runtime-%{dotnet_major}
+BuildRequires:  aspnetcore-targeting-pack-%{dotnet_major}
 BuildRequires:  bash-completion
 BuildRequires:  clang
 BuildRequires:  cmake
 BuildRequires:  coreutils
-BuildRequires:  dotnet-apphost-pack-%{dotnet_major}-bin
-BuildRequires:  dotnet-host-bin
-BuildRequires:  dotnet-hostfxr-%{dotnet_major}-bin
-BuildRequires:  dotnet-runtime-%{dotnet_major}-bin
-BuildRequires:  dotnet-sdk-%{dotnet_major}-bin
-BuildRequires:  dotnet-sdk-%{dotnet_major}-source-built-artifacts-bin
-BuildRequires:  dotnet-targeting-pack-%{dotnet_major}-bin
-BuildRequires:  dotnet-templates-%{dotnet_major}-bin
+BuildRequires:  dotnet-apphost-pack-%{dotnet_major}
+BuildRequires:  dotnet-host
+BuildRequires:  dotnet-hostfxr-%{dotnet_major}
+BuildRequires:  dotnet-runtime-%{dotnet_major}
+BuildRequires:  dotnet-sdk-%{dotnet_major}
+BuildRequires:  dotnet-sdk-%{dotnet_major}-source-built-artifacts
+BuildRequires:  dotnet-targeting-pack-%{dotnet_major}
+BuildRequires:  dotnet-templates-%{dotnet_major}
 BuildRequires:  findutils
 BuildRequires:  git
 BuildRequires:  gnupg
