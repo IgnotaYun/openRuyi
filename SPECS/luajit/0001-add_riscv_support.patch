@@ -1,4 +1,4 @@
-From a3cb7804d3a83ce2617954403b0f11924a221abb Mon Sep 17 00:00:00 2001
+From e7764a9bbf5d0fc8e9867c4ca4220dd00fa19d31 Mon Sep 17 00:00:00 2001
 From: gns <root@infi.wang>
 Date: Tue, 25 Aug 2026 20:02:40 +0800
 Subject: [PATCH 01/21] riscv(support): add RISC-V 64 arch base definition
@@ -62,7 +62,7 @@ index 5587fa25e..399034827 100644
  #endif
  
 
-From 5bcb7467faabacfd1c6d82aff8f067ba05547457 Mon Sep 17 00:00:00 2001
+From 96f74c6aa76f5203a5195e80c1bc228456654291 Mon Sep 17 00:00:00 2001
 From: gns <root@infi.wang>
 Date: Tue, 25 Aug 2026 20:02:40 +0800
 Subject: [PATCH 02/21] riscv(dynasm): add RISC-V support
@@ -1539,7 +1539,7 @@ index 000000000..49f6b2250
 +riscv64 = true -- Using a global is an ugly, but effective solution.
 +return require("dasm_riscv")
 
-From 10f525bbbbe522340ee95bca13d7470a5a2a89e0 Mon Sep 17 00:00:00 2001
+From ceac8ec82b247d3e779e7f6946d7caa9a09120cb Mon Sep 17 00:00:00 2001
 From: gns <root@infi.wang>
 Date: Tue, 25 Aug 2026 20:02:40 +0800
 Subject: [PATCH 03/21] riscv(interp): add register definition
@@ -1637,7 +1637,7 @@ index 000000000..946fc414c
 +|.define FTMP3,		f3
 +|.define FTMP4,		f4
 
-From 6c166bc474b065e53b42b8d58436aa7b2ad6b4fc Mon Sep 17 00:00:00 2001
+From 42b295784865e47872c41035f4b5949dc1c56d38 Mon Sep 17 00:00:00 2001
 From: gns <root@infi.wang>
 Date: Tue, 25 Aug 2026 20:02:40 +0800
 Subject: [PATCH 04/21] riscv(interp): add frame definition
@@ -1759,7 +1759,7 @@ index 946fc414c..124040794 100644
 +|  ret
 +|.endmacro
 
-From 25d871f7a3baa36eaa3f3fc0cbd8fb75eff15296 Mon Sep 17 00:00:00 2001
+From 35a8a504e645c3c5931af287c5da7cf00c00555c Mon Sep 17 00:00:00 2001
 From: gns <root@infi.wang>
 Date: Tue, 25 Aug 2026 20:02:40 +0800
 Subject: [PATCH 05/21] riscv(interp): add helper macros and typedefs
@@ -2130,7 +2130,7 @@ index 124040794..60e835a8d 100644
 +|
 +|//-----------------------------------------------------------------------
 
-From 8275effbd9ce4a3c2d72a51a3b72ac17d8fb3ea0 Mon Sep 17 00:00:00 2001
+From 6f000140016b3f99f61e4fe2f00a0c7fff92bc21 Mon Sep 17 00:00:00 2001
 From: gns <root@infi.wang>
 Date: Tue, 25 Aug 2026 20:02:40 +0800
 Subject: [PATCH 06/21] riscv(interp): add base assembly interpreter VM
@@ -5888,7 +5888,7 @@ index 60e835a8d..4cf4d8e07 100644
 +
 +}
 
-From 5a15eea4d3792a0dbc036632f3f158b2f0a4597e Mon Sep 17 00:00:00 2001
+From 4c691b9157bb705bc3fa93f50c5ad7be277bd2ca Mon Sep 17 00:00:00 2001
 From: gns <root@infi.wang>
 Date: Tue, 25 Aug 2026 20:02:41 +0800
 Subject: [PATCH 07/21] riscv(support): add target definition
@@ -6470,7 +6470,7 @@ index 000000000..668511b55
 +
 +#endif
 
-From 3dd4490bbfa67f979c15030715ec36ca6b19eaf4 Mon Sep 17 00:00:00 2001
+From 4bed62dbc12fac0a34258d288f921c97d598c339 Mon Sep 17 00:00:00 2001
 From: gns <root@infi.wang>
 Date: Tue, 25 Aug 2026 20:02:41 +0800
 Subject: [PATCH 08/21] riscv(ffi): add call convention and support framework
@@ -6951,7 +6951,7 @@ index e1f6c230b..804073776 100644
  #error "Missing calling convention definitions for this architecture"
  #endif
 diff --git a/src/lj_ccallback.c b/src/lj_ccallback.c
-index 6348264bf..12537efaf 100644
+index f06d3541e..131248257 100644
 --- a/src/lj_ccallback.c
 +++ b/src/lj_ccallback.c
 @@ -102,6 +102,10 @@ static MSize CALLBACK_OFS2SLOT(MSize ofs)
@@ -7340,7 +7340,7 @@ index 4cf4d8e07..1ea86742a 100644
    case BC_KSHORT:
      |  // RA = dst*8, RD = int16_literal*8
 
-From b332a923658bb409719a81f3f76859d080f91a7a Mon Sep 17 00:00:00 2001
+From 7441450a822c00ae39844d4a53b8a66f62ba417b Mon Sep 17 00:00:00 2001
 From: gns <root@infi.wang>
 Date: Tue, 25 Aug 2026 20:02:41 +0800
 Subject: [PATCH 09/21] riscv(support): add extension detection
@@ -7541,7 +7541,7 @@ index 74a88ad86..c528cc607 100644
  
  #define JIT_F_CPUSTRING		""
 
-From d00702887cb79ca8cc541721355256a48c5811c7 Mon Sep 17 00:00:00 2001
+From 539f0d17255c021f3aa2abe0f1ef2b17853fc6d6 Mon Sep 17 00:00:00 2001
 From: gns <root@infi.wang>
 Date: Tue, 25 Aug 2026 20:02:41 +0800
 Subject: [PATCH 10/21] riscv(jit): add mandatory constants
@@ -7585,7 +7585,7 @@ index edf12cba0..afda5eb87 100644
    J->k64[LJ_K64_VM_EXIT_INTERP].u64 = (uintptr_t)lj_ptr_sign((void *)lj_vm_exit_interp, 0);
  #endif
 
-From a0a8f051f56c409863bb1e5a8a31b771241ad99f Mon Sep 17 00:00:00 2001
+From 3e97eb8e3e5eeb55687ef38da96f364df17cc104 Mon Sep 17 00:00:00 2001
 From: gns <root@infi.wang>
 Date: Tue, 25 Aug 2026 20:02:41 +0800
 Subject: [PATCH 11/21] riscv(jit): add insn emitter
@@ -8178,7 +8178,7 @@ index 000000000..1907d8f76
 +
 +#define emit_spsub(as, ofs)	emit_addptr(as, RID_SP, -(ofs))
 
-From 0de72311650bde3746aae5030d6ab7f313c2db05 Mon Sep 17 00:00:00 2001
+From 62eccb0ccfe1ee140b582c2cf668d9c8c6128b89 Mon Sep 17 00:00:00 2001
 From: gns <root@infi.wang>
 Date: Tue, 25 Aug 2026 20:02:41 +0800
 Subject: [PATCH 12/21] riscv(jit): add IR assembler
@@ -10267,7 +10267,7 @@ index 000000000..b3c1450fd
 +  lj_mcode_patch(J, mcarea, 1);
 +}
 
-From 77fdcbc5ed21f2b511efa1deeae23d05f398c4bb Mon Sep 17 00:00:00 2001
+From a5ab98c2a014b046dbf2e256dd169ff7b6cfa74e Mon Sep 17 00:00:00 2001
 From: gns <root@infi.wang>
 Date: Tue, 25 Aug 2026 20:02:41 +0800
 Subject: [PATCH 13/21] riscv(interp): add VM builder support
@@ -10341,7 +10341,7 @@ index b2aa948ee..bdde6b3bc 100644
    emit_asm_align(ctx, 4);
  
 
-From 674543bd92b7a59915def08288a86c0dccfe602b Mon Sep 17 00:00:00 2001
+From 1a2c8568851d359788dd970723a0ae578e093bd1 Mon Sep 17 00:00:00 2001
 From: gns <root@infi.wang>
 Date: Tue, 25 Aug 2026 20:02:41 +0800
 Subject: [PATCH 14/21] riscv(misc): add bytecode listing support
@@ -10363,7 +10363,7 @@ index 409403ac8..4d35e59ad 100644
  
  local map_os = {
 
-From 48390f3573ed4521bc5550c12ff9e2620118c308 Mon Sep 17 00:00:00 2001
+From d2155d6730a6c2fd32cbe1a2a8d92a22877798ac Mon Sep 17 00:00:00 2001
 From: gns <root@infi.wang>
 Date: Tue, 25 Aug 2026 20:02:41 +0800
 Subject: [PATCH 15/21] riscv(jit): add hooks in interpreter
@@ -10871,7 +10871,7 @@ index 1ea86742a..99b8e9eaa 100644
      |  // Fall through. Assumes BC_IFUNCF/BC_IFUNCV follow.
      break;
 
-From 2b0fd0a9c76789b690b83969c660975f0a54ac72 Mon Sep 17 00:00:00 2001
+From 4e413bedf05eb688fdede8904d28464b790ff7bc Mon Sep 17 00:00:00 2001
 From: gns <root@infi.wang>
 Date: Tue, 25 Aug 2026 20:02:41 +0800
 Subject: [PATCH 16/21] riscv(interp): add DWARF info
@@ -11022,7 +11022,7 @@ index 99b8e9eaa..d0b1ab1e9 100644
 +  }
  }
 
-From a3a824099fd7b611afb8dd8303e4fcfc7160bbdc Mon Sep 17 00:00:00 2001
+From 3e4ae9587624fb0b98dfd6d885ee0583a6f83e32 Mon Sep 17 00:00:00 2001
 From: gns <root@infi.wang>
 Date: Tue, 25 Aug 2026 20:02:41 +0800
 Subject: [PATCH 17/21] riscv(jit): add GDBJIT support
@@ -11072,7 +11072,7 @@ index 4cea4fabd..acb3b6449 100644
  #error "Unsupported target architecture"
  #endif
 
-From 64367653a2179460213daf02da43c7b0d2504e8d Mon Sep 17 00:00:00 2001
+From b3a1d868ce129b94cc89943bb3401870465890b5 Mon Sep 17 00:00:00 2001
 From: gns <root@infi.wang>
 Date: Tue, 25 Aug 2026 20:02:41 +0800
 Subject: [PATCH 18/21] riscv(support,linux): add Linux specfic icache sync
@@ -11083,7 +11083,7 @@ Subject: [PATCH 18/21] riscv(support,linux): add Linux specfic icache sync
  1 file changed, 17 insertions(+)
 
 diff --git a/src/lj_mcode.c b/src/lj_mcode.c
-index edcc4bd9d..25b11ccfc 100644
+index f560a9834..209b9666f 100644
 --- a/src/lj_mcode.c
 +++ b/src/lj_mcode.c
 @@ -38,6 +38,12 @@
@@ -11118,7 +11118,7 @@ index edcc4bd9d..25b11ccfc 100644
    __clear_cache(start, end);
  #else
 
-From c59fec0958683e53357a12a943e3ce2f33952925 Mon Sep 17 00:00:00 2001
+From e6b42f2ce217378ef5767ebfef96b05f9990f2e8 Mon Sep 17 00:00:00 2001
 From: gns <root@infi.wang>
 Date: Tue, 25 Aug 2026 20:02:41 +0800
 Subject: [PATCH 19/21] riscv(support,linux): make mremap() non-moving due to
@@ -11129,7 +11129,7 @@ Subject: [PATCH 19/21] riscv(support,linux): make mremap() non-moving due to
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/src/lj_alloc.c b/src/lj_alloc.c
-index f4d3a7da6..078331020 100644
+index 7dfbed8cd..361ae9ea9 100644
 --- a/src/lj_alloc.c
 +++ b/src/lj_alloc.c
 @@ -365,7 +365,7 @@ static void *CALL_MREMAP_(void *ptr, size_t osz, size_t nsz, int flags)
@@ -11142,7 +11142,7 @@ index f4d3a7da6..078331020 100644
  #else
  #define CALL_MREMAP_MV		CALL_MREMAP_MAYMOVE
 
-From d3840989eb0169d78b204e9c9220223f1b1ffe87 Mon Sep 17 00:00:00 2001
+From b42d11c94d3e633e6917dfac5ac180abfd846f40 Mon Sep 17 00:00:00 2001
 From: gns <root@infi.wang>
 Date: Tue, 25 Aug 2026 20:02:41 +0800
 Subject: [PATCH 20/21] riscv(misc): add disassmbler support
@@ -12162,7 +12162,7 @@ index 000000000..cc867342c
 +  regname = dis_riscv.regname
 +}
 
-From ce14aff834d8d62220fc730a16042c52451f41cc Mon Sep 17 00:00:00 2001
+From 163788f6ca77e5ed5157b4dbadb3833bac584f43 Mon Sep 17 00:00:00 2001
 From: gns <root@infi.wang>
 Date: Tue, 25 Aug 2026 20:02:41 +0800
 Subject: [PATCH 21/21] riscv(misc): add support in Makefile
