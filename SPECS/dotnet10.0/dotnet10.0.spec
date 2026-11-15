@@ -506,7 +506,8 @@ find -depth -name 'artifacts' -type d -print -exec rm -rf {} \;
   --clean-while-building \
   --with-sdk previously-built-dotnet \
   --source-only \
-  --release-manifest %{SOURCE1} \
+  --source-repository %{dotnet_sourceRepository} \
+  --source-version %{dotnet_sourceVersion} \
   --os linux \
   --rid linux-%{runtime_arch} \
   --arch %{runtime_arch} \
